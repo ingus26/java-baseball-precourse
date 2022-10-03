@@ -24,7 +24,9 @@ public class BaseBallGame {
         do {
             String baseballs = input();
 
-            calc(baseballs);
+            if (menuValidation(baseballs)) {
+                calc(baseballs);
+            }
         } while (Config.START_GAME.equals(gameStatus));
     }
 
@@ -37,20 +39,62 @@ public class BaseBallGame {
         return readLine();
     }
 
+    private void menu() {
+        System.out.println(Message.GAME_INFO.message);
+        menuValidation(readLine());
+    }
+
+    private boolean menuValidation(String baseballs) {
+        if (isStartMenu(baseballs)) {
+            return false;
+        }
+
+        if (isStopMenu(baseballs)) {
+            return false;
+        }
+
+        return true;
+    }
+
+    private boolean isStartMenu(String menu) {
+        if (Config.START_GAME.equals(menu)) {
+            start();
+            return true;
+        }
+        return false;
+    }
+
+    private boolean isStopMenu(String menu) {
+        if (Config.STOP_GAME.equals(menu)) {
+            stop();
+            return true;
+        }
+        return false;
+    }
+
     public void calc(String baseballs) {
         user.setBaseBalls(baseballs);
 
         Score score = new Score(computer.getBaseBalls(), user.getBaseBalls());
 
-        is3Strike(score.getResult());
+        if (is3Strike(score.getResult())) {
+            menu();
+        }
     }
 
-    public void is3Strike(String result) {
+    public boolean is3Strike(String result) {
         System.out.println(result);
 
         if (String.format("%d%s", Config.MAX_NUMBER, GameType.스트라이크.name()).equals(result)) {
             System.out.printf("%s %s%n", Message.GAME_WIN.message, Message.GAME_STOP.message);
+            return true;
         }
+        return false;
+    }
+
+    public void stop() {
+        gameStatus = Config.STOP_GAME;
+        System.out.print(Message.GAME_STOP.message);
     }
 
 }
