@@ -1,10 +1,10 @@
 package baseball;
 
-import org.assertj.core.util.Sets;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.assertj.core.util.Sets;
+import org.junit.jupiter.api.Test;
 
 class PlayerTest {
 
@@ -21,9 +21,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "141";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -31,9 +29,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "한글임";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -41,9 +37,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "aBc";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -51,9 +45,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "-1-2-3";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -61,18 +53,14 @@ class PlayerTest {
         Player user = new Player();
         String input = "1**";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
     void 사용자의_수_입력오류_Null() throws IllegalArgumentException {
         Player user = new Player();
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(null);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(null));
     }
 
     @Test
@@ -80,9 +68,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -90,9 +76,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "3";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
     @Test
@@ -100,9 +84,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "12";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
 
@@ -121,9 +103,7 @@ class PlayerTest {
         Player user = new Player();
         String input = "1234";
 
-        assertThrows(IllegalArgumentException.class, () -> {
-            user.setBaseBalls(input);
-        });
+        assertThrows(IllegalArgumentException.class, () -> user.setBaseBalls(input));
     }
 
 }

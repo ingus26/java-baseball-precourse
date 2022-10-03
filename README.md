@@ -33,12 +33,12 @@
       - [x] 게임 플레이어가 잘못된 값을 입력할 경우 IllegalArgumentException을 발생시킨 후 애플리케이션은 종료 된다.
       -
 ## 제약 사항
-1. [ ] JDK 8 버전 사용
-2. [ ] camp.nextstep.edu.missionutils에서 제공하는 Randoms 및 Console API를 사용하여 구현
+1. [x] JDK 8 버전 사용
+2. [x] camp.nextstep.edu.missionutils에서 제공하는 Randoms 및 Console API를 사용하여 구현
    - Random 값 추출은 camp.nextstep.edu.missionutils.Randoms의 pickNumberInRange()를 활용
    - 사용자가 입력하는 값은 camp.nextstep.edu.missionutils.Console의 readLine()을 활용
-3. [ ] 코드컨벤션 : https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java
-4. [ ] 도메인 로직에 단위 테스트
+3. [x] 코드컨벤션 : https://github.com/woowacourse/woowacourse-docs/tree/master/styleguide/java
+4. [x] 도메인 로직에 단위 테스트
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)

@@ -5,7 +5,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class BaseBallGame {
 
     private Player computer;
-    private Player user;
+    private final Player user;
     private static String gameStatus = "1";
 
     public BaseBallGame() {
@@ -49,11 +49,7 @@ public class BaseBallGame {
             return false;
         }
 
-        if (isStopMenu(baseballs)) {
-            return false;
-        }
-
-        return true;
+        return !isStopMenu(baseballs);
     }
 
     private boolean isStartMenu(String menu) {
@@ -61,6 +57,7 @@ public class BaseBallGame {
             start();
             return true;
         }
+
         return false;
     }
 
@@ -69,6 +66,7 @@ public class BaseBallGame {
             stop();
             return true;
         }
+
         return false;
     }
 
@@ -89,6 +87,7 @@ public class BaseBallGame {
             System.out.printf("%s %s%n", Message.GAME_WIN.message, Message.GAME_STOP.message);
             return true;
         }
+
         return false;
     }
 

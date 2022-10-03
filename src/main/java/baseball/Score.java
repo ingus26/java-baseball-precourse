@@ -30,17 +30,23 @@ public class Score {
     }
 
     public String getResult() {
-        String result = "";
-
-        for (int i = 0; i < GameType.values().length - 1; i++) {
-            result += getTypeScore(GameType.values()[i]);
-        }
+        String result = getTypesScore();
 
         if ("".equals(result)) {
             result = GameType.낫싱.name();
         }
 
-        return result.trim();
+        return result;
+    }
+
+    public String getTypesScore() {
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < GameType.values().length - 1; i++) {
+            result.append(getTypeScore(GameType.values()[i]));
+        }
+
+        return result.toString().trim();
     }
 
     public String getTypeScore(GameType type) {
