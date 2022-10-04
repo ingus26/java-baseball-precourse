@@ -54,7 +54,7 @@ public class Player {
     }
 
     private void isNumber(char data) {
-        if (data >= 49 && data <= 57) {
+        if (data >= 48 && data <= 57) {
             return;
         }
         throw new IllegalArgumentException();
